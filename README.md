@@ -55,42 +55,83 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-/* write all the steps invloved */
+Step-1:
 
+create module encoder and decoder.
 
+Step-2:
+
+Get inputs and outputs for encoders and decoders.
+
+Step-3:
+
+perform or operation for encoder and and logic for decoders.
+
+Step-4:
+
+perform RTL LOGIC and get waveform.
+
+Step-5:
+
+End the module.
 
 ### PROGRAM 
 /*
+```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+Developed by: C.Prabha
+RegisterNumber:  212222110032
+
+## Decoder
+module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input a0,a1,a2;
+output y0,y1,y2,y3,y4,y5,y6,y7;
+wire a0bar,a1bar,a2bar;
+not(a0bar,a0);
+not(a1bar,a1);
+not(a2bar,a2);
+and(y0,a0bar,a1bar,a2bar);
+and(y1,a0,a1bar,a2bar);
+and(y2,a0bar,a1,a2bar);
+and(y3,a0,a1,a2bar);
+and(y4,a0bar,a1bar,a2);
+and(y5,a0,a1bar,a2);
+and(y6,a0bar,a1,a2);
+and(y7,a0,a1,a2);
+endmodule
+
+## Encoder
+module encoder(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
+input y0,y1,y2,y3,y4,y5,y6,y7;
+output a0,a1,a2;
+or(a0,y7,y5,y3,y1);
+or(a1,y7,y6,y3,y2);
+or(a2,y7,y6,y5,y4);
+endmodule
+```
 */
 
-
-
-
-
-
 ### RTL LOGIC  
+## Encoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/2a3b21fe-e67a-48a6-9cb9-509d4b470dfc)
 
-
-
-
-
-
+## Decoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/47e9d770-9b43-4d91-837c-770eaa8d3eec)
 
 
 ### TIMING DIGRAMS  
+## Encoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/e663b3e0-72f3-44a7-be54-c542c1d7795c)
 
-
-
-
+## Decoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/28b6c54d-115d-4420-b340-686af05fa32f)
 
 ### TRUTH TABLE 
+## Encoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/f7ad60fd-4c98-41d6-a398-771fb02294f3)
 
-
-
-
-
+## Decoder:
+![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/8709c4e7-5e51-4b1d-aebd-27fe8c260dc7)
 
 ### RESULTS 
+Thus the program to desing encoder and decoder is completed.

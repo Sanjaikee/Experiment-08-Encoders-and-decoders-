@@ -79,8 +79,8 @@ End the module.
 /*
 ```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: C.Prabha
-RegisterNumber:  212222110032
+Developed by: Sanjai S
+RegisterNumber:  23003393
 
 ## Decoder
 module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);

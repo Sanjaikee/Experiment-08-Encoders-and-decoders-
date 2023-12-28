@@ -55,83 +55,93 @@ D7 = X Y Z
 ## Figure -04 8 to 3 Decoder implementation 
 
 ### Procedure
-Step-1:
+1.create module encoder and decoder.
 
-create module encoder and decoder.
+2.Get inputs and outputs for encoders and decoders.
 
-Step-2:
+3.perform or operation for encoder and and logic for decoders.
 
-Get inputs and outputs for encoders and decoders.
+4.perform RTL LOGIC and get waveform.
 
-Step-3:
 
-perform or operation for encoder and and logic for decoders.
-
-Step-4:
-
-perform RTL LOGIC and get waveform.
-
-Step-5:
-
-End the module.
 
 ### PROGRAM 
 /*
-```
 Program for Endocers and Decoders  and verify its truth table in quartus using Verilog programming.
-Developed by: Sanjai S
-RegisterNumber:  23003393
-
-## Decoder
-module decoder (a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
-input a0,a1,a2;
-output y0,y1,y2,y3,y4,y5,y6,y7;
-wire a0bar,a1bar,a2bar;
-not(a0bar,a0);
-not(a1bar,a1);
-not(a2bar,a2);
-and(y0,a0bar,a1bar,a2bar);
-and(y1,a0,a1bar,a2bar);
-and(y2,a0bar,a1,a2bar);
-and(y3,a0,a1,a2bar);
-and(y4,a0bar,a1bar,a2);
-and(y5,a0,a1bar,a2);
-and(y6,a0bar,a1,a2);
-and(y7,a0,a1,a2);
-endmodule
-
-## Encoder
-module encoder(a0,a1,a2,y0,y1,y2,y3,y4,y5,y6,y7);
-input y0,y1,y2,y3,y4,y5,y6,y7;
-output a0,a1,a2;
-or(a0,y7,y5,y3,y1);
-or(a1,y7,y6,y3,y2);
-or(a2,y7,y6,y5,y4);
-endmodule
-```
+Developed by: SANJAY S
+RegisterNumber:  212222230132
 */
+```
+ENCODER:
+module encoder(a,b,c,d0,d1,d2,d3,d4,d5,d6,d7);
+output a,b,c;
+input d0,d1,d2,d3,d4,d5,d6,d7;
+or(a,d4,d5,d6,d7);
+or(b,d2,d3,d6,d7);
+or(c,d1,d3,d5,d7);
+endmodule
+
+
+DECODER:
+module decoder(d0,d1,d2,d3,d4,d5,d6,d7,a,b,c);
+output d0,d1,d2,d3,d4,d5,d6,d7;
+input a,b,c;
+assign d0 = (~a&~b&~c);
+assign d1 = (~a&~b&c);
+assign d2 = (~a&b&~c);
+assign d3 = (~a&b&c);
+assign d4 = (a&~b&~c);
+assign d5 = (a&~b&c);
+assign d6 = (a&b&~c);
+assign d7 = (a&b&c);
+endmodule
+
+```
+
+
+
 
 ### RTL LOGIC  
-## Encoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/2a3b21fe-e67a-48a6-9cb9-509d4b470dfc)
 
-## Decoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/47e9d770-9b43-4d91-837c-770eaa8d3eec)
+Encoder
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/38853c0d-7042-48c7-bcca-0e96189a547a)
+
+
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/5791712d-4bd6-40d8-a1d4-bd152078ce12)
+
+
+
 
 
 ### TIMING DIGRAMS  
-## Encoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/e663b3e0-72f3-44a7-be54-c542c1d7795c)
+Encoder
 
-## Decoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/28b6c54d-115d-4420-b340-686af05fa32f)
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/4220560c-5266-4437-be66-3125c54fada7)
+
+
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/62130ea6-bbb8-4c60-8c2b-fa440ebe5cbe)
+
+
 
 ### TRUTH TABLE 
-## Encoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/f7ad60fd-4c98-41d6-a398-771fb02294f3)
 
-## Decoder:
-![image](https://github.com/22008837/Experiment-08-Encoders-and-decoders-/assets/120194155/8709c4e7-5e51-4b1d-aebd-27fe8c260dc7)
+Encoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/ccd3a5ea-a582-41c3-ae26-367af6183d62)
+
+
+Decoder
+
+
+![image](https://github.com/22002102/Experiment-08-Encoders-and-decoders-/assets/119091638/a3ecb838-4e46-4043-ab49-2f16f2cc1b2a)
 
 ### RESULTS 
-Thus the program to desing encoder and decoder is completed.
+Thus the program to desing encoder and decoder is done.
